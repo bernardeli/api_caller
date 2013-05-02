@@ -20,8 +20,7 @@ class Endpoint
 
   def as_curl
     commands = []
-    #commands << "curl \"#{self.class.default_url}#{attrs.uri}\""
-    commands << "curl \"https://triggerapp.com#{attrs.uri}\""
+    commands << "curl \"#{self.class.default_url}#{attrs.uri}\""
 
     headers = []
     self.class.headers.each do |header_key, header_value|
