@@ -1,0 +1,3 @@
+- @endpoints.each do |name, values|
+  %p
+    %a{ href: '/request/' + name }= values['name']

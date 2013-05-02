@@ -1,0 +1,157 @@
+default_url: 'http://lvh.me:3000'
+headers:
+  'Accept': 'application/json'
+  'Content-type': 'application/json'
+
+endpoints:
+  users_authenticate:
+    uri: /api/v2/authenticate
+    name: Users#authenticate
+    verb: POST
+    params:
+      email: ricardo@netengine.com.au
+      password: foobar
+
+  users_me:
+    uri: /api/v2/me
+    name: Users#me
+    verb: GET
+
+  users_index:
+    uri: /api/v2/users
+    name: Users#index
+    verb: GET
+
+  users_index_with_company_id:
+    uri: /api/v2/users
+    name: Users#index with company_id
+    verb: GET
+    params:
+      company_id: 5
+
+  users_index_with_task_id:
+    uri: /api/v2/users
+    name: Users#index with task_id
+    verb: GET
+    params:
+      task_id: 49914
+
+  companies_index:
+    uri: /api/v2/companies
+    name: Company#index
+    verb: GET
+
+  companies_create:
+    uri: /api/v2/companies
+    name: Company#create
+    verb: POST
+    params:
+      company:
+        name: 'New testing company'
+        phone: 0481111999
+        address1: 7 Prospect St
+        city: Brisbane
+        state: QLD
+        country: Australia
+        task_rate: 50
+
+  companies_show:
+    uri: /api/v2/companies/15195
+    name: Company#show
+    verb: GET
+
+  companies_update:
+    uri: /api/v2/companies/15195
+    name: Company#update
+    verb: PUT
+    params:
+      company:
+        name: "My new company name"
+
+  companies_delete:
+    uri: /api/v2/companies/15203
+    name: Company#destroy
+    verb: DELETE
+
+  projects_index:
+    uri: /api/v2/projects
+    name: Project#index
+    verb: GET
+
+  projects_index_with_company_id:
+    uri: /api/v2/projects
+    name: Project#index with company id
+    verb: GET
+    params:
+      company_id: 5
+
+  projects_show:
+    uri: /api/v2/projects/302
+    name: Project#show
+    verb: GET
+
+  projects_create:
+    uri: /api/v2/projects
+    name: Project#create
+    verb: POST
+    params:
+      company_id: 5
+      project:
+        name: "New awesome project"
+        description: "This is gonna blow your mind"
+
+  projects_update:
+    uri: /api/v2/projects/21559
+    name: Project#update
+    verb: PUT
+    params:
+      project:
+        name: "Awesomeness project"
+
+  projects_delete:
+    uri: /api/v2/projects/21559
+    name: Project#destroy
+    verb: DELETE
+
+  tasks_index:
+    uri: /api/v2/tasks
+    name: Task#index
+    verb: GET
+
+  tasks_index_with_project_id:
+    uri: /api/v2/tasks
+    name: Task#index with project id
+    verb: GET
+    params:
+      project_id: 141
+
+  task_create:
+    uri: /api/v2/tasks
+    name: Task#create
+    verb: POST
+    params:
+      project_id: 141
+      task:
+        title: "New task"
+
+  tasks_update:
+    uri: /api/v2/tasks/49967
+    name: Task#update
+    verb: PUT
+    params:
+      task:
+        title: "Awesomeness task"
+
+  task_delete:
+    uri: /api/v2/tasks/49967
+    name: Task#destroy
+    verb: DELETE
+
+  task_activity:
+    uri: /api/v2/tasks/29148/time
+    name: Log time into task 29148
+    verb: POST
+    params:
+      end_at: 15/04/2013 17:00
+      duration: 2
+      notes: Finished this task
